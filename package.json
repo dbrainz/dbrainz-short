@@ -1,0 +1,14 @@
+{
+  "name": "shorten",
+  "version": "1.0.0",
+  "description": "FCC URL Shortener Microservice",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Darren Brain <darren.brain@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
