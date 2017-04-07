@@ -10,12 +10,9 @@ app.get('/*', (req,res) => {
     if (req.params[0].substr(0,4) == "new/") {
         var longUrl = req.params[0].substr(4)
         if (!(validUrl.isUri(longUrl))) {
-            console.log(longUrl);
-            console.log('invalid url');
             res.end(JSON.stringify({'error' : 'invalid url'}))
             return
         }
-        console.log('valid URL');
         mongo.connect(mongoURL, (err, db) => {
             if (err) throw err;
     
@@ -28,7 +25,6 @@ app.get('/*', (req,res) => {
                     if (err) throw err;
                     db.close();
                 })
-                console.log(JSON.stringify(insertRec))
                 res.end(JSON.stringify({'originalURL' : longUrl, 'shortURL' : 'https://dbrainz-short-dbrainz.c9users.io/' + newKey}))
             })
     
