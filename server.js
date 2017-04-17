@@ -5,7 +5,7 @@ var validUrl = require('valid-url');
 var app = express()
 var mongoURL = "mongodb://dbrainzfcc:shortener@ds133428.mlab.com:33428/shorten"
 
-app.get('/', express.static('.'))
+app.get('/', express.static(__dirname))
 app.get('/*', (req,res) => {
     if (req.params[0].substr(0,4) == "new/") {
         var longUrl = req.params[0].substr(4)
