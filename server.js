@@ -26,7 +26,7 @@ app.get('/*', (req,res) => {
                     if (err) throw err;
                     db.close();
                 })
-                res.end(JSON.stringify({'originalURL' : longUrl, 'shortURL' : 'https://dbrainz-short-dbrainz.c9users.io/' + newKey}))
+                res.end(JSON.stringify({'originalURL' : longUrl, 'shortURL' : 'https://dbrainz-short.herokuapp.com/' + newKey}))
             })
     
 
